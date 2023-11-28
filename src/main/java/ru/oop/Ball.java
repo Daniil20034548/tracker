@@ -2,11 +2,10 @@ package ru.oop;
 
 public class Ball {
     public void tryRun(boolean condition) {
-        if (condition == true) {
+        if (condition) {
             System.out.println("Колобок съеден");
         } else {
             System.out.println("Колобок сбежал");
         }
     }
 }
-
