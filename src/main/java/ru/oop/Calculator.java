@@ -21,7 +21,8 @@ public class Calculator {
     }
 
     public int sumAllOperation(int y) {
-        return sum(5) + multiply(5) + minus(5) + divide(5);
+        int rst = y;
+        return sum(rst) + multiply(rst) + minus(rst) + divide(rst);
     }
 
     public static void main(String[] args) {
@@ -32,6 +33,6 @@ public class Calculator {
         Calculator calculator1 = new Calculator();
         System.out.println(calculator1.divide(5));
         Calculator calculator2 = new Calculator();
-        System.out.println(calculator2.sumAllOperation(5));
+        System.out.println(calculator2.sumAllOperation(10));
     }
 }
