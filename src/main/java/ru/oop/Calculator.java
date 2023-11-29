@@ -20,7 +20,7 @@ public class Calculator {
         return y / x;
     }
 
-    public int sumAllOperation() {
+    public int sumAllOperation(int y) {
         return sum(5) + multiply(5) + minus(5) + divide(5);
     }
 
@@ -32,6 +32,6 @@ public class Calculator {
         Calculator calculator1 = new Calculator();
         System.out.println(calculator1.divide(5));
         Calculator calculator2 = new Calculator();
-        System.out.println(calculator2.sumAllOperation());
+        System.out.println(calculator2.sumAllOperation(5));
     }
 }
