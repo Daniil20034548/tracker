@@ -20,8 +20,7 @@ public class Calculator {
         return y / x;
     }
 
-    public int sumAllOperation(int y) {
-        int rst = y;
+    public int sumAllOperation(int rst) {
         return sum(rst) + multiply(rst) + minus(rst) + divide(rst);
     }
 
