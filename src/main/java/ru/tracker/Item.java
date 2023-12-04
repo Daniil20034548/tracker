@@ -1,8 +1,20 @@
 package ru.tracker;
+import javax.security.auth.login.CredentialException;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 
 public class Item {
     private int id;
     private String name;
+    private  LocalDateTime created = LocalDateTime.now();
+
+    public Item(LocalDateTime created) {
+        this.created = created;
+    }
+
+    public LocalDateTime getCreated() {
+        return created;
+    }
 
     public Item() {
     }
@@ -32,3 +44,11 @@ public class Item {
         this.name = name;
     }
 }
+
+class StartUl {
+    public static void main(String[] args) {
+        Item item = new Item();
+        System.out.println(item.getCreated().format(DateTimeFormatter.ofPattern("dd-MMMM-EEEE-yyyy HH:mm:ss")));
+    }
+}
+
