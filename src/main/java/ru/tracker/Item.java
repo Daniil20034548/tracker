@@ -8,10 +8,6 @@ public class Item {
     private String name;
     private final LocalDateTime created = LocalDateTime.now();
 
-    public LocalDateTime getCreated() {
-        return created;
-    }
-
     public Item() {
     }
 
@@ -39,12 +35,11 @@ public class Item {
     public void setName(String name) {
         this.name = name;
     }
-}
 
-class StartUl {
-    public static void main(String[] args) {
-        Item item = new Item();
-        System.out.println(item.getCreated().format(DateTimeFormatter.ofPattern("dd-MMMM-EEEE-yyyy HH:mm:ss")));
+    public LocalDateTime getCreated() {
+        return created;
     }
 }
+
+
 
