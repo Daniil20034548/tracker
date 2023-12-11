@@ -14,7 +14,7 @@ public class Matches {
             int matches = Integer.parseInt(input.nextLine());
             if (matches <= 3 && matches > 0 && matches <= count) {
                 turn = !turn;
-                count = count - matches;
+                count -= matches;
                 System.out.println("Осталось " + count + " спичек");
             } else {
                 System.out.println("Число должно быть от 1 до 3 " +
