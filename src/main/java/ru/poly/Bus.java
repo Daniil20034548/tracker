@@ -3,20 +3,15 @@ package ru.poly;
 public class Bus implements Transport {
 
     @Override
-    public int drive() {
-        int speed = 50;
-        return speed;
+    public void drive() {
     }
 
     @Override
-    public int passenger(int passengers) {
-        passengers = 30;
-        return passengers;
+    public void passenger(int passengers) {
     }
 
     @Override
-    public void refuel(int refuel) {
-        final int PRISE = 50;
-        refuel *= PRISE;
+    public int refuel(int refuel) {
+        return 50 * refuel;
     }
 }

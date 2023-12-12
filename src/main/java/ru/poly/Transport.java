@@ -1,9 +1,9 @@
 package ru.poly;
 
 public interface Transport {
-    int drive();
+    void drive();
 
-    int passenger(int passengers);
+    void passenger(int passengers);
 
-    void refuel(int refuel);
+    int refuel(int refuel);
 }
