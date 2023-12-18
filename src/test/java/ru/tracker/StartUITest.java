@@ -53,6 +53,7 @@ class StartUITest {
         new StartUI(output).init(input, tracker, actions);
         assertThat(tracker.findById(item.getId())).isNull();
     }
+
     @Test
     void whenExit() {
         Output output = new StubOutput();
@@ -70,6 +71,7 @@ class StartUITest {
                         + "=== Завершение программы ===" + System.lineSeparator()
         );
     }
+
     @Test
     void whenReplaceItemTestOutputIsSuccessfully() {
         Output output = new StubOutput();
@@ -97,14 +99,15 @@ class StartUITest {
                         + "=== Завершение программы ===" + ln
         );
     }
+
     @Test
     void whenFindAllActionTestOutputIsSuccessfully() {
         Output output = new StubOutput();
         Tracker tracker = new Tracker();
         Item one = tracker.add(new Item("test1"));
+        Item two = tracker.add(new Item("test2"));
         Input input = new MockInput(
-                new String[] {"0", String.valueOf(one.getId()), "1"}
-        );
+                new String[] {"0", String.valueOf(one.getId()), String.valueOf(two.getId()), "1"});
         User[] actions = new User[]{
                 new FindAll(output),
                 new Exit(output)
@@ -117,12 +120,14 @@ class StartUITest {
                         + "1. Завершить программу" + ln
                         + "=== Вывод всех заявок ===" + ln
                         + one + ln
+                        + two + ln
                         + "Меню:" + ln
                         + "0. Показать все заявки" + ln
                         + "1. Завершить программу" + ln
                         + "=== Завершение программы ===" + ln
         );
     }
+
     @Test
     void whenFindByNameActionTestOutputIsSuccessfully() {
         Output output = new StubOutput();
@@ -149,6 +154,7 @@ class StartUITest {
                         + "=== Завершение программы ===" + ln
         );
     }
+
     @Test
     void whenFindByIdActionActionTestOutputIsSuccessfully() {
         Output output = new StubOutput();
