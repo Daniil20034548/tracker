@@ -2,7 +2,7 @@ package ru.tracker.action;
 
 import ru.tracker.*;
 
-public class Create implements User {
+public class Create implements UserAction {
     private final Output output;
 
     public Create(Output output) {

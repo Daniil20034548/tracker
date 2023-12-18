@@ -13,7 +13,7 @@ class StartUITest {
                 new String[] {"0", "Item name", "1"}
         );
         Tracker tracker = new Tracker();
-        User[] actions = {
+        UserAction[] actions = {
                 new Create(output),
                 new Exit(output)
         };
@@ -30,7 +30,7 @@ class StartUITest {
         Input input = new MockInput(
                 new String[] {"0", String.valueOf(item.getId()), replacedName, "1"}
         );
-        User[] actions = {
+        UserAction[] actions = {
                 new Replace(output),
                 new Exit(output)
         };
@@ -46,7 +46,7 @@ class StartUITest {
         Input input = new MockInput(
                 new String[] {"0", String.valueOf(item.getId()), "1"}
         );
-        User[] actions = {
+        UserAction[] actions = {
                 new Delete(output),
                 new Exit(output)
         };
@@ -61,7 +61,7 @@ class StartUITest {
                 new String[] {"0"}
         );
         Tracker tracker = new Tracker();
-        User[] actions = {
+        UserAction[] actions = {
                 new Exit(output)
         };
         new StartUI(output).init(input, tracker, actions);
@@ -81,7 +81,7 @@ class StartUITest {
         Input input = new MockInput(
                 new String[] {"0", String.valueOf(one.getId()), replaceName, "1"}
         );
-        User[] actions = new User[]{
+        UserAction[] actions = new UserAction[]{
                 new Replace(output),
                 new Exit(output)
         };
@@ -108,7 +108,7 @@ class StartUITest {
         Item two = tracker.add(new Item("test2"));
         Input input = new MockInput(
                 new String[] {"0", String.valueOf(one.getId()), String.valueOf(two.getId()), "1"});
-        User[] actions = new User[]{
+        UserAction[] actions = new UserAction[]{
                 new FindAll(output),
                 new Exit(output)
         };
@@ -136,7 +136,7 @@ class StartUITest {
         Input input = new MockInput(
                 new String[] {"0", String.valueOf(one.getName()), "1"}
         );
-        User[] actions = new User[]{
+        UserAction[] actions = new UserAction[]{
                 new FindByName(output),
                 new Exit(output)
         };
@@ -163,7 +163,7 @@ class StartUITest {
         Input input = new MockInput(
                 new String[] {"0", String.valueOf(one.getId()), "1"}
         );
-        User[] actions = new User[]{
+        UserAction[] actions = new UserAction[]{
                 new FindById(output),
                 new Exit(output)
         };

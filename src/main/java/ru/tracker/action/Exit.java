@@ -4,7 +4,7 @@ import ru.tracker.Input;
 import ru.tracker.Output;
 import ru.tracker.Tracker;
 
-public class Exit implements User {
+public class Exit implements UserAction {
     private final Output output;
 
     public Exit(Output output) {

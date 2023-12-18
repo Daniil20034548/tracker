@@ -2,7 +2,7 @@ package ru.tracker.action;
 
 import ru.tracker.*;
 
-public class FindById implements User {
+public class FindById implements UserAction {
     private final Output output;
 
     public FindById(Output output) {

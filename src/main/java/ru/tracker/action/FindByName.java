@@ -5,7 +5,7 @@ import ru.tracker.Item;
 import ru.tracker.Output;
 import ru.tracker.Tracker;
 
-public class FindByName implements User {
+public class FindByName implements UserAction {
     private final Output output;
 
     public FindByName(Output output) {

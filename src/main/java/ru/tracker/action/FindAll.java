@@ -2,7 +2,7 @@ package ru.tracker.action;
 
 import ru.tracker.*;
 
-public class FindAll implements User {
+public class FindAll implements UserAction {
     private final Output output;
 
     public FindAll(Output output) {

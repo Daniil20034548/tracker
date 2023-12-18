@@ -2,7 +2,7 @@ package ru.tracker.action;
 
 import ru.tracker.*;
 
-public class Delete implements User {
+public class Delete implements UserAction {
     private final Output output;
 
     public Delete(Output output) {

@@ -5,7 +5,7 @@ import ru.tracker.Item;
 import ru.tracker.Output;
 import ru.tracker.Tracker;
 
-public class Replace implements User {
+public class Replace implements UserAction {
     private final Output output;
 
     public Replace(Output output) {
