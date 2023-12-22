@@ -17,9 +17,10 @@ public class ElementNotFoundException extends Exception {
         public static void main(String[] args) {
             try {
                 String[] value = {"1", "2", "ret"};
-                System.out.println(indexOf(value, "ret"));
+                System.out.println(indexOf(value, "re"));
             } catch (ElementNotFoundException e) {
                 e.printStackTrace();
+                System.out.println("Кдюч не найден ");
             }
         }
     }
