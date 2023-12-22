@@ -20,7 +20,7 @@ public class ElementNotFoundException extends Exception {
                 System.out.println(indexOf(value, "re"));
             } catch (ElementNotFoundException e) {
                 e.printStackTrace();
-                System.out.println("Кдюч не найден ");
+                System.out.println("Ключ не найден ");
             }
         }
     }
