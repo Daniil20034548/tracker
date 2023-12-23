@@ -1,11 +1,14 @@
 package ru.ex;
 
+import java.util.Objects;
+
 public class ElementNotFoundException extends Exception {
         public static int indexOf(String[] value, String key) throws ElementNotFoundException {
             int result = -1;
             for (int i = 0; i < value.length; i++) {
-                if (value[i] == key) {
+                if (Objects.equals(value[i], key)) {
                     result = i;
+                    break;
                 }
             }
             if (result == -1) {
@@ -15,8 +18,8 @@ public class ElementNotFoundException extends Exception {
         }
 
         public static void main(String[] args) {
+            String[] value = {"1", "2", "ret"};
             try {
-                String[] value = {"1", "2", "ret"};
                 System.out.println(indexOf(value, "re"));
             } catch (ElementNotFoundException e) {
                 e.printStackTrace();
