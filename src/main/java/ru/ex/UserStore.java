@@ -1,19 +1,25 @@
 package ru.ex;
 
+import java.util.Objects;
+
 public class UserStore {
 
     public static User findUser(User[] users, String login) throws UserNotFoundException {
+        int result = -1;
         for (User user : users) {
-            if (user.getUsername() != login) {
-                throw new UserNotFoundException();
+            if (Objects.equals(user.getUsername(), login)) {
+                result = 1;
+            }
+            if (result == -1) {
+                throw new UserNotFoundException("пользователя не найдено.");
             }
         }
         return users[users.length - 1];
     }
 
     public static boolean validate(User user) throws UserInvalidException {
-        if (user.isValid() && user.getUsername().length() < 3) {
-            throw new UserInvalidException();
+        if (!user.isValid() || user.getUsername().length() < 3) {
+            throw new UserInvalidException("пользователь не валидный");
         }
         return true;
     }
@@ -29,10 +35,8 @@ public class UserStore {
         }
         } catch (UserInvalidException r) {
             r.printStackTrace();
-            System.out.println("пользователь не валидный");
         } catch (UserNotFoundException e) {
             e.printStackTrace();
-            System.out.println("пользователя не найдено.");
         }
     }
 }
