@@ -3,19 +3,17 @@ package ru.ex;
 public class UserStore {
 
     public static User findUser(User[] users, String login) throws UserNotFoundException {
-        int result = -1;
-        User user = null;
-        for (User usere : users) {
-            if (usere.getUsername().equals(login)) {
-                result = 1;
-                user = usere;
+        User foundUser = null;
+        for (User user : users) {
+            if (user.getUsername().equals(login)) {
+                foundUser = user;
                 break;
             }
         }
-        if (result == -1) {
+        if (foundUser == null) {
             throw new UserNotFoundException("пользователя не найдено.");
         }
-        return user;
+        return foundUser;
     }
 
     public static boolean validate(User user) throws UserInvalidException {
@@ -26,10 +24,9 @@ public class UserStore {
     }
 
     public static void main(String[] args) {
-        try {
         User[] users = {
-                new User("Ivan Ivanov", true), new User("vdvdvd", true)
-        };
+                new User("Ivan Ivanov", true), new User("vdvdvd", true)};
+        try {
         User user = findUser(users, "vdvdvd");
         if (validate(user)) {
             System.out.println("This user has an access");
