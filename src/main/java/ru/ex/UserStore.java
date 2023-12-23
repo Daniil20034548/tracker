@@ -1,20 +1,21 @@
 package ru.ex;
 
-import java.util.Objects;
-
 public class UserStore {
 
     public static User findUser(User[] users, String login) throws UserNotFoundException {
         int result = -1;
-        for (User user : users) {
-            if (Objects.equals(user.getUsername(), login)) {
+        User user = null;
+        for (User usere : users) {
+            if (usere.getUsername().equals(login)) {
                 result = 1;
-            }
-            if (result == -1) {
-                throw new UserNotFoundException("пользователя не найдено.");
+                user = usere;
+                break;
             }
         }
-        return users[users.length - 1];
+        if (result == -1) {
+            throw new UserNotFoundException("пользователя не найдено.");
+        }
+        return user;
     }
 
     public static boolean validate(User user) throws UserInvalidException {
@@ -27,9 +28,9 @@ public class UserStore {
     public static void main(String[] args) {
         try {
         User[] users = {
-                new User("Ivan Ivanov", true)
+                new User("Ivan Ivanov", true), new User("vdvdvd", true)
         };
-        User user = findUser(users, "Ivan Ivanov");
+        User user = findUser(users, "vdvdvd");
         if (validate(user)) {
             System.out.println("This user has an access");
         }
