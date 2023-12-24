@@ -188,7 +188,6 @@ class StartUITest {
         Input input = new MockInput(
                 new String[] {"10", "0"}
         );
-
         Tracker tracker = new Tracker();
         UserAction[] actions = new UserAction[]{
                 new Exit(output)
