@@ -7,7 +7,7 @@ public class SingleTracker {
     private SingleTracker() {
     }
 
-    public  static SingleTracker getInstance() {
+    public static SingleTracker getInstance() {
         if (instance == null) {
             instance = new SingleTracker();
         }
@@ -19,7 +19,7 @@ public class SingleTracker {
     }
 
     public Item findById(int id) {
-        return null;
+        return tracker.findById(id);
     }
 
     public Item[] findByName(String key) {
