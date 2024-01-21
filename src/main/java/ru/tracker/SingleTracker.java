@@ -1,5 +1,7 @@
 package ru.tracker;
 
+import java.util.List;
+
 public class SingleTracker {
     private Tracker tracker = new Tracker();
     private static SingleTracker instance = null;
@@ -26,7 +28,7 @@ public class SingleTracker {
         return tracker.findByName(key);
     }
 
-    public Item[] findAll() {
+    public List<Item> findAll() {
         return tracker.findAll();
     }
 
