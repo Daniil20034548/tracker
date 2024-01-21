@@ -17,18 +17,17 @@ public class Tracker {
     }
 
     public List<Item> findAll() {
-        ArrayList<Item> result = new ArrayList<>();
-        result = (ArrayList<Item>) items;
-        return items;
+        ArrayList<Item> result = new ArrayList<Item>(items);
+        return result;
     }
 
     public List<Item> findByName(String key) {
         ArrayList<Item> result = new ArrayList<>();
-        for (int i = 0; i < items.size(); i++) {
-                if (Objects.equals(items.get(i).getName(), key)) {
-                    result.add(items.get(i));
-                }
+        for (Item item : items) {
+            if (Objects.equals(item.getName(), key)) {
+                result.add(item);
             }
+        }
         return result;
     }
 
