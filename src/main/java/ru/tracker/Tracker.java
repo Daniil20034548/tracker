@@ -2,7 +2,6 @@ package ru.tracker;
 
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 import java.util.Objects;
 
@@ -17,12 +16,11 @@ public class Tracker {
     }
 
     public List<Item> findAll() {
-        ArrayList<Item> result = new ArrayList<Item>(items);
-        return result;
+        return new ArrayList<>(items);
     }
 
     public List<Item> findByName(String key) {
-        ArrayList<Item> result = new ArrayList<>();
+        List<Item> result = new ArrayList<>();
         for (Item item : items) {
             if (Objects.equals(item.getName(), key)) {
                 result.add(item);
