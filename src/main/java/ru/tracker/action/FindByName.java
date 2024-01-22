@@ -4,8 +4,7 @@ import ru.tracker.Input;
 import ru.tracker.Item;
 import ru.tracker.Output;
 import ru.tracker.Tracker;
-
-import java.util.ArrayList;
+import java.util.List;
 
 public class FindByName implements UserAction {
     private final Output output;
@@ -23,7 +22,7 @@ public class FindByName implements UserAction {
     public boolean execute(Input input, Tracker tracker) {
         output.println("=== Вывод заявок по имени ===");
         String name = input.askStr("Введите имя: ");
-        ArrayList<Item> items = (ArrayList<Item>) tracker.findByName(name);
+        List<Item> items = tracker.findByName(name);
         if (!items.isEmpty()) {
             for (Item item : items) {
                 output.println(item);
