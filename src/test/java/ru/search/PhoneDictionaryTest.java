@@ -7,6 +7,7 @@ import java.util.ArrayList;
 import static org.assertj.core.api.Assertions.assertThat;
 
 public class PhoneDictionaryTest {
+
     @Test
     public void whenFindByName() {
         PhoneDictionary phones = new PhoneDictionary();
@@ -16,6 +17,7 @@ public class PhoneDictionaryTest {
         ArrayList<Person> persons = phones.find("Ivan");
         assertThat(persons.get(0).getSurname()).isEqualTo("Ivanov");
     }
+
     @Test
     public void whenFindByZero() {
         PhoneDictionary phones = new PhoneDictionary();

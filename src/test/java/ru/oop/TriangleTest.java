@@ -5,6 +5,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.offset;
 
 public class TriangleTest {
+
     @Test
     public void when00and40and04Then8() {
         Point a = new Point(0, 0);
@@ -15,6 +16,7 @@ public class TriangleTest {
         double expected = 8;
         assertThat(rsl).isCloseTo(expected, offset(0.001));
     }
+
     @Test
     public void when11and11and11Then1() {
         Point a = new Point(1, 1);

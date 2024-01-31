@@ -31,7 +31,7 @@ class ValidateInputTest {
     void whenInvalidInput1And2And3() {
         Output output = new StubOutput();
         Input in = new MockInput(
-                new String[] {"1","2","3"}
+                new String[] {"1", "2", "3"}
         );
         ValidateInput input = new ValidateInput(output, in);
         int selected = input.askInt("Enter menu:");

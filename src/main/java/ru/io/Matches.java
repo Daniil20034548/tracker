@@ -17,8 +17,8 @@ public class Matches {
                 count -= matches;
                 System.out.println("Осталось " + count + " спичек");
             } else {
-                System.out.println("Число должно быть от 1 до 3 " +
-                        "и не должно превышать количество оставшихся спичек");
+                System.out.println("Число должно быть от 1 до 3 "
+                        + "и не должно превышать количество оставшихся спичек");
             }
         }
         if (!turn) {
