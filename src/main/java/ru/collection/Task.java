@@ -1,7 +1,5 @@
 package ru.collection;
 
-import java.util.HashSet;
-
 public class Task {
     private String number;
     private String description;
