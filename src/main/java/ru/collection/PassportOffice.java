@@ -8,7 +8,7 @@ public class PassportOffice {
 
     public boolean add(Citizen citizen) {
         boolean result = false;
-        if (citizens.get(citizen.getPassport()) == null) {
+        if (!(citizens.containsKey(citizen.getPassport()))) {
             citizens.put(citizen.getPassport(), citizen);
             result = true;
         }
@@ -17,7 +17,7 @@ public class PassportOffice {
 
 
     public Citizen get(String passport) {
-        if (citizens.get(passport) == null) {
+        if (passport == null) {
             System.out.println("Пасспорт не найден");
         }
         return citizens.get(passport);
