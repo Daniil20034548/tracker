@@ -17,9 +17,6 @@ public class PassportOffice {
 
 
     public Citizen get(String passport) {
-        if (citizens == null) {
-            System.out.println("Пасспорт не найден");
-        }
         return citizens.get(passport);
     }
 }
