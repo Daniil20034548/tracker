@@ -15,8 +15,12 @@ public class ReconstructPhrase {
 
     private String getEvenElements() {
         StringBuilder stringBuilder = new StringBuilder();
-        for (evenElements.size();  0 < evenElements.size(); evenElements.poll()) {
-                stringBuilder.append(evenElements.poll());
+        int length = descendingElements.size();
+        for (int i = 0; i < length * 2; i++) {
+            String result = String.valueOf(evenElements.poll());
+            if (evenElements.size() % 2 == 1) {
+                stringBuilder.append(result);
+            }
         }
         return stringBuilder.toString();
     }
