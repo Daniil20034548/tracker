@@ -15,10 +15,10 @@ public class ReconstructPhrase {
 
     private String getEvenElements() {
         StringBuilder stringBuilder = new StringBuilder();
-        int length = descendingElements.size();
-        for (int i = 0; i < length * 2; i++) {
-            String result = String.valueOf(evenElements.poll());
-            if (evenElements.size() % 2 == 1) {
+        int length = evenElements.size();
+        for (int i = 0; i < length; i++) {
+            Character result = evenElements.poll();
+            if (i % 2 == 0) {
                 stringBuilder.append(result);
             }
         }
