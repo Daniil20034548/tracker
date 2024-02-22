@@ -16,22 +16,12 @@ public class BankService {
     }
 
     public void deleteUser(String passport) {
-        for (User user : users.keySet()) {
-            if (user.getPassport().equals(passport)) {
-                users.remove(user);
-                break;
-            }
-        }
+        users.remove(findByPassport(passport));
     }
 
     public void addAccount(String passport, Account account) {
-        for (User user : users.keySet()) {
-            if (user.getPassport().equals(passport)) {
-                for (List<Account> result : users.values())
-                    if (!result.contains(account))
-                users.get(user).add(account);
-            }
-        }
+        if (findByPassport(passport) != null && !users.get(findByPassport(passport)).contains(account))
+            users.get(findByPassport(passport)).add(account);
     }
 
     public User findByPassport(String passport) {
@@ -46,28 +36,27 @@ public class BankService {
     }
 
     public Account findByRequisite(String passport, String requisite) {
-        Account account = null;
-        for (User user : users.keySet()) {
-            if (user.getPassport().equals(passport)) {
-                for (Account result : users.get(user)) {
-                    if (result.getRequisite().equals(requisite)) {
-                        account = result;
-                    }
+        Account result = null;
+        List<Account> list = users.get(findByPassport(passport));
+        if (list != null) {
+            for (Account account : list) {
+                if (account.getRequisite().equals(requisite)) {
+                result = account;
                 }
             }
         }
-        return account;
+        return result;
     }
 
     public boolean transferMoney(String sourcePassport, String sourceRequisite,
                                  String destinationPassport, String destinationRequisite,
                                  double amount) {
         boolean result = false;
-        Account writeOff = findByRequisite(sourcePassport, sourceRequisite);
-        Account replenish = findByRequisite(destinationPassport, destinationRequisite);
-        if (writeOff != null && replenish != null && writeOff.getBalance() >= amount) {
-            writeOff.setBalance(writeOff.getBalance() - amount);
-            replenish.setBalance(replenish.getBalance() + amount);
+        Account sourceAccount = findByRequisite(sourcePassport, sourceRequisite);
+        Account destAccount = findByRequisite(destinationPassport, destinationRequisite);
+        if (sourceAccount != null && destAccount != null && sourceAccount.getBalance() >= amount) {
+            sourceAccount.setBalance(sourceAccount.getBalance() - amount);
+            destAccount.setBalance(destAccount.getBalance() + amount);
             result = true;
         }
         return result;
