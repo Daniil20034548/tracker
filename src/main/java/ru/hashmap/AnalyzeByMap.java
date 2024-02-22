@@ -9,7 +9,7 @@ public class AnalyzeByMap {
         for (Pupil pupil : pupils) {
             for (Subject subject : pupil.subjects()) {
                 result += subject.score();
-                element += 1;
+                element++;
             }
         }
         return result / element;
@@ -22,7 +22,7 @@ public class AnalyzeByMap {
             int element = 0;
             for (Subject subject : pupil.subjects()) {
                 result += subject.score();
-                element += 1;
+                element++;
             }
             Label label = new Label(pupil.name(), result / element);
             labels.add(label);
