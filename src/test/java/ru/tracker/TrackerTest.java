@@ -4,7 +4,6 @@ import org.junit.jupiter.api.Test;
 
 import java.util.*;
 
-import static net.bytebuddy.matcher.ElementMatchers.is;
 import static org.assertj.core.api.Assertions.assertThat;
 
 public class TrackerTest {
@@ -116,7 +115,7 @@ public class TrackerTest {
     }
 
     @Test
-    public void whenDescByName(){
+    public void whenDescByName() {
         Item item1 = new Item("item1");
         Item item2 = new Item("item2");
         Item item3 = new Item("item3");
