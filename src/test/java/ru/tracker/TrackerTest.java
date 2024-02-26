@@ -1,6 +1,10 @@
 package ru.tracker;
 
 import org.junit.jupiter.api.Test;
+
+import java.util.*;
+
+import static net.bytebuddy.matcher.ElementMatchers.is;
 import static org.assertj.core.api.Assertions.assertThat;
 
 public class TrackerTest {
@@ -92,5 +96,39 @@ public class TrackerTest {
         tracker.add(item);
         tracker.delete(1000);
         assertThat(tracker.findById(item.getId()).getName()).isEqualTo("Bug");
+    }
+
+    @Test
+    public void whenAscByName1() {
+        Item item1 = new Item("item1");
+        Item item2 = new Item("item2");
+        Item item3 = new Item("item3");
+        List<Item> items = new ArrayList<>();
+        items.add(item2);
+        items.add(item3);
+        items.add(item1);
+        List<Item> excepted = new ArrayList<>();
+        excepted.add(item1);
+        excepted.add(item2);
+        excepted.add(item3);
+        Collections.sort(items, new ItemAscByName());
+        assertThat(items).isEqualTo(excepted);
+    }
+
+    @Test
+    public void whenDescByName(){
+        Item item1 = new Item("item1");
+        Item item2 = new Item("item2");
+        Item item3 = new Item("item3");
+        List<Item> items = new ArrayList<>();
+        items.add(item2);
+        items.add(item3);
+        items.add(item1);
+        List<Item> excepted = new ArrayList<>();
+        excepted.add(item3);
+        excepted.add(item2);
+        excepted.add(item1);
+        Collections.sort(items, new ItemDescByName());
+        assertThat(items).isEqualTo(excepted);
     }
 }
