@@ -25,6 +25,7 @@ class ItemAscByNameTest {
                 new Item("item3")
         );
         Collections.sort(items, new ItemAscByName());
+
         assertThat(items).isEqualTo(excepted);
     }
 }
