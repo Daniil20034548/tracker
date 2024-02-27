@@ -19,11 +19,7 @@ class ItemDescByNameTest {
         items.add(item2);
         items.add(item3);
         items.add(item1);
-        List<Item> excepted = List.of(
-                new Item("item3"),
-                new Item("item2"),
-                new Item("item1")
-        );
+        List<Item> excepted = List.of(item3, item2, item1);
         Collections.sort(items, new ItemDescByName());
         assertThat(items).isEqualTo(excepted);
     }

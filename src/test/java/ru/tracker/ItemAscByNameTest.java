@@ -19,11 +19,7 @@ class ItemAscByNameTest {
         items.add(item2);
         items.add(item3);
         items.add(item1);
-        List<Item> excepted = List.of(
-                new Item("item1"),
-                new Item("item2"),
-                new Item("item3")
-        );
+        List<Item> excepted = List.of(item1, item2, item3);
         Collections.sort(items, new ItemAscByName());
         assertThat(items).isEqualTo(excepted);
     }
