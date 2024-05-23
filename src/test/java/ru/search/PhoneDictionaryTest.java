@@ -27,6 +27,7 @@ public class PhoneDictionaryTest {
         ArrayList<Person> persons = phones.find("1111");
         assertThat(persons.size()).isZero();
     }
+
     @Test
     public void whenFindByName1() {
         PhoneDictionary phones = new PhoneDictionary();
